@@ -788,6 +788,176 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    contenu: Attribute.Blocks & Attribute.Required;
+    programmation: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'api::programmation.programmation'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageDonjonPageDonjon extends Schema.SingleType {
+  collectionName: 'page_donjons';
+  info: {
+    singularName: 'page-donjon';
+    pluralName: 'page-donjons';
+    displayName: 'Page Donjon';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    article: Attribute.Relation<
+      'api::page-donjon.page-donjon',
+      'oneToOne',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-donjon.page-donjon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-donjon.page-donjon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageProgrammationPageProgrammation
+  extends Schema.SingleType {
+  collectionName: 'page_programmations';
+  info: {
+    singularName: 'page-programmation';
+    pluralName: 'page-programmations';
+    displayName: 'Page Programmation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    articles: Attribute.Relation<
+      'api::page-programmation.page-programmation',
+      'oneToMany',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-programmation.page-programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-programmation.page-programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageVisitePageVisite extends Schema.SingleType {
+  collectionName: 'page_visites';
+  info: {
+    singularName: 'page-visite';
+    pluralName: 'page-visites';
+    displayName: 'Page Visite';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    article: Attribute.Relation<
+      'api::page-visite.page-visite',
+      'oneToOne',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-visite.page-visite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-visite.page-visite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgrammationProgrammation extends Schema.CollectionType {
+  collectionName: 'programmations';
+  info: {
+    singularName: 'programmation';
+    pluralName: 'programmations';
+    displayName: 'Programmation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    descriptif: Attribute.Blocks & Attribute.Required;
+    image_video_secondaire: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::programmation.programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::programmation.programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +976,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::article.article': ApiArticleArticle;
+      'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
+      'api::page-programmation.page-programmation': ApiPageProgrammationPageProgrammation;
+      'api::page-visite.page-visite': ApiPageVisitePageVisite;
+      'api::programmation.programmation': ApiProgrammationProgrammation;
     }
   }
 }

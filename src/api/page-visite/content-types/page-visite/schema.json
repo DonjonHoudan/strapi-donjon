@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_visites",
+  "info": {
+    "singularName": "page-visite",
+    "pluralName": "page-visites",
+    "displayName": "Page Visite"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    }
+  }
+}
