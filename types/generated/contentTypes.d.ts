@@ -807,6 +807,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::programmation.programmation'
     >;
+    image: Attribute.Media;
+    video: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -818,6 +820,72 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    article: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageActualitePageActualite extends Schema.SingleType {
+  collectionName: 'page_actualites';
+  info: {
+    singularName: 'page-actualite';
+    pluralName: 'page-actualites';
+    displayName: 'Page Actualit\u00E9';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    articles: Attribute.Relation<
+      'api::page-actualite.page-actualite',
+      'oneToMany',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-actualite.page-actualite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-actualite.page-actualite',
       'oneToOne',
       'admin::user'
     > &
@@ -977,6 +1045,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::article.article': ApiArticleArticle;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::page-actualite.page-actualite': ApiPageActualitePageActualite;
       'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
       'api::page-programmation.page-programmation': ApiPageProgrammationPageProgrammation;
       'api::page-visite.page-visite': ApiPageVisitePageVisite;
