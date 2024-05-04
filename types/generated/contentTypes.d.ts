@@ -825,6 +825,39 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    article: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageDonjonPageDonjon extends Schema.SingleType {
   collectionName: 'page_donjons';
   info: {
@@ -977,6 +1010,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::article.article': ApiArticleArticle;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
       'api::page-programmation.page-programmation': ApiPageProgrammationPageProgrammation;
       'api::page-visite.page-visite': ApiPageVisitePageVisite;
