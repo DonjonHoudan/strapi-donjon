@@ -24,6 +24,20 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::programmation.programmation"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
