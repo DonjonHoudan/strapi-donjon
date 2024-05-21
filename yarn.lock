@@ -1928,15 +1928,15 @@
     sharp "0.32.6"
     yup "0.32.9"
 
-"@strapi/plugin-users-permissions@4.24.1":
-  version "4.24.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-4.24.1.tgz#598db1d07b61bb515e4c6d65c09c9be03afef10f"
-  integrity sha512-XuvG+X2rQGktpV3Sy1fBUwaWSvfmT6GyZtsgrULQrfrO9MiGKlBOPrPL/u8bqXijBqGWgRNkEbhjj193NwndEQ==
+"@strapi/plugin-users-permissions@4.24.2":
+  version "4.24.2"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-4.24.2.tgz#4aa32f4ccb5519b3e87c4816cdb74aead7f8d989"
+  integrity sha512-2N7RS+5UtuAtpD0WFbdo+AJJ0lZQ2larSXBUqX5ykxayl9GwwxnCubel/SzQ0wQZhISWbmemoG87zBfVl0NSEw==
   dependencies:
     "@strapi/design-system" "1.18.0"
-    "@strapi/helper-plugin" "4.24.1"
+    "@strapi/helper-plugin" "4.24.2"
     "@strapi/icons" "1.18.0"
-    "@strapi/utils" "4.24.1"
+    "@strapi/utils" "4.24.2"
     bcryptjs "2.4.3"
     formik "2.4.0"
     grant-koa "5.4.8"
