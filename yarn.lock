@@ -1927,15 +1927,15 @@
     sharp "0.32.6"
     yup "0.32.9"
 
-"@strapi/plugin-users-permissions@4.24.3":
-  version "4.24.3"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-4.24.3.tgz#5a21624c772bc9d47a5413d3736f62f1ee934419"
-  integrity sha512-V8SWhKCR1B2s82w6IuXE3p1bESzr3fNRWAKu6FmWLK7d426xCYT12deoIQsdlnf+uBx9S5Yq5GuzAR2vbq1vDg==
+"@strapi/plugin-users-permissions@4.24.4":
+  version "4.24.4"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-4.24.4.tgz#cac4eaa1d62552e9ca198973b74c7f07edb05261"
+  integrity sha512-3ZiIZZgNW1kAzpM+Imd9RN66ZdKj45lAlhcRMsqBSvjgTo7AnmTMeJy7JkR2Oq3SRVuzxVpJP1Qi49+v3YviGQ==
   dependencies:
     "@strapi/design-system" "1.18.0"
-    "@strapi/helper-plugin" "4.24.3"
+    "@strapi/helper-plugin" "4.24.4"
     "@strapi/icons" "1.18.0"
-    "@strapi/utils" "4.24.3"
+    "@strapi/utils" "4.24.4"
     bcryptjs "2.4.3"
     formik "2.4.0"
     grant-koa "5.4.8"
@@ -2101,18 +2101,6 @@
     "@radix-ui/react-visually-hidden" "^1.0.3"
     aria-hidden "^1.2.4"
     react-remove-scroll "^2.5.9"
-
-"@strapi/utils@4.24.3":
-  version "4.24.3"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.24.3.tgz#3c2a0b91d20a4838204dd0ca4ae52319302838e2"
-  integrity sha512-yc6F5KOwfMVx68jiD3kcnJMd6qA8rF1iY3o9HRei5Os74ekgylJF++mdZMOFyDgdDUANylq6GVlI+KUTKapoQw==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.30.0"
-    http-errors "1.8.1"
-    lodash "4.17.21"
-    p-map "4.0.0"
-    yup "0.32.9"
 
 "@strapi/utils@4.24.4":
   version "4.24.4"
