@@ -1769,6 +1769,22 @@
     react-query "3.39.3"
     react-select "5.7.0"
 
+"@strapi/helper-plugin@4.25.2":
+  version "4.25.2"
+  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.25.2.tgz#91e957913f11108f09aee434d70f7af1f293e10f"
+  integrity sha512-46yuZQMDlW6ZJeVe14xHXtMSFmt5TDh96lVtFLNEs6Cu2QFSwK3JL1v+i6l40g60WN2pGYLCbAjqEzcDoB/1qg==
+  dependencies:
+    axios "1.6.0"
+    date-fns "2.30.0"
+    formik "2.4.0"
+    immer "9.0.19"
+    lodash "4.17.21"
+    qs "6.11.1"
+    react-helmet "6.1.0"
+    react-intl "6.4.1"
+    react-query "3.39.3"
+    react-select "5.7.0"
+
 "@strapi/icons@1.19.0":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.19.0.tgz#efa6b553a7de437171512e3549859faa141a145f"
@@ -1820,13 +1836,13 @@
     qs "6.11.1"
     sift "16.0.1"
 
-"@strapi/plugin-cloud@4.25.1":
-  version "4.25.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.25.1.tgz#6fbdf7ac50f7a1b9c919f1bb40dffaf32d5ce447"
-  integrity sha512-JrVvaqKXhkhfVenP2ojL59p0xBZG7RaALWQmaDD55/JdQ2hkH5VWbnUPM57qZfAUi5I9YbAWUcremWJ07hpr2w==
+"@strapi/plugin-cloud@4.25.2":
+  version "4.25.2"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.25.2.tgz#1d18c33230d0a5b239a0593cd284d940b03187c1"
+  integrity sha512-j6aQYi4kRp/EeSy+h8vRdsYANovYLIzTO/3hfjXY5c+KmdSzuurbMYIFSuTA4Os09FuaQwZZblmeWqVLKkvA8A==
   dependencies:
     "@strapi/design-system" "1.19.0"
-    "@strapi/helper-plugin" "4.25.1"
+    "@strapi/helper-plugin" "4.25.2"
     "@strapi/icons" "1.19.0"
     react-intl "6.4.1"
 
