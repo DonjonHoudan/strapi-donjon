@@ -807,8 +807,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::programmation.programmation'
     >;
-    image: Attribute.Media;
-    video: Attribute.Media;
+    image: Attribute.Media<'images'>;
+    video: Attribute.Media<'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1005,9 +1005,9 @@ export interface ApiProgrammationProgrammation extends Schema.CollectionType {
   };
   attributes: {
     titre: Attribute.String & Attribute.Required;
-    image: Attribute.Media & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
     descriptif: Attribute.Blocks & Attribute.Required;
-    image_video_secondaire: Attribute.Media;
+    image_video_secondaire: Attribute.Media<'images' | 'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
