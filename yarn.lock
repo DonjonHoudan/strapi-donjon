@@ -1918,16 +1918,16 @@
     react-query "3.39.3"
     yup "0.32.9"
 
-"@strapi/plugin-i18n@4.25.4":
-  version "4.25.4"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-i18n/-/plugin-i18n-4.25.4.tgz#6ff52a1084f6d9ffc9fb744cbda02c521ee0b2d5"
-  integrity sha512-QyEmFnWAYL4g9SG5HpJ6YHWsW9lqZJ6D6ZUdphlkW5WqtIU/4sMT0Sg6bavjCvZGyKGAhE1PFo6oVOiojVREGg==
+"@strapi/plugin-i18n@4.25.5":
+  version "4.25.5"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-i18n/-/plugin-i18n-4.25.5.tgz#9f3177b58c17b4b56820f64758ca2a88b69dcb0f"
+  integrity sha512-WPYhRgDRJoeZbQ7vsNz8GcJfa8BMjPD2hmoK++5zcVwY3Caqj2pl0LO+bkyQ2fWrUkp+HxwDZc4F7IYPSd/xEg==
   dependencies:
     "@reduxjs/toolkit" "1.9.7"
     "@strapi/design-system" "1.19.0"
-    "@strapi/helper-plugin" "4.25.4"
+    "@strapi/helper-plugin" "4.25.5"
     "@strapi/icons" "1.19.0"
-    "@strapi/utils" "4.25.4"
+    "@strapi/utils" "4.25.5"
     axios "1.6.0"
     formik "2.4.0"
     immer "9.0.19"
