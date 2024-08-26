@@ -4,7 +4,8 @@
   "info": {
     "singularName": "programmation",
     "pluralName": "programmations",
-    "displayName": "Programmation"
+    "displayName": "Programmation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,24 +17,29 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "descriptif": {
       "type": "blocks",
       "required": true
     },
     "image_video_secondaire": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre"
     }
   }
 }
