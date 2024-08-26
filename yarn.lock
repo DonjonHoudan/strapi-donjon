@@ -1772,22 +1772,6 @@
     plop "2.7.6"
     pluralize "8.0.0"
 
-"@strapi/helper-plugin@4.25.7":
-  version "4.25.7"
-  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.25.7.tgz#72ff66a42d2e62969229de94a06e7b71781f0993"
-  integrity sha512-S+rnWlBg/tBRwmn5PV9fkn5B3m582l9pyWpNJWjzsRMEKOZtaIak67IiFynb51Ht7ftftzGWzw3Aex+ztc2SCA==
-  dependencies:
-    axios "1.6.0"
-    date-fns "2.30.0"
-    formik "2.4.0"
-    immer "9.0.19"
-    lodash "4.17.21"
-    qs "6.11.1"
-    react-helmet "6.1.0"
-    react-intl "6.4.1"
-    react-query "3.39.3"
-    react-select "5.7.0"
-
 "@strapi/helper-plugin@4.25.8":
   version "4.25.8"
   resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.25.8.tgz#068d6cc28f7e98291320c5758cb7d4e436965e16"
@@ -3046,10 +3030,10 @@ bcryptjs@2.4.3:
   resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
   integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
 
-better-sqlite3@11.1.2:
-  version "11.1.2"
-  resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-11.1.2.tgz#6c9d064c9f1ff2a7f507477648ca0ba67bf564a3"
-  integrity sha512-gujtFwavWU4MSPT+h9B+4pkvZdyOUkH54zgLdIrMmmmd4ZqiBIrRNBzNzYVFO417xo882uP5HBu4GjOfaSrIQw==
+better-sqlite3@11.2.1:
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-11.2.1.tgz#3c6b8a8e2e12444d380e811796b59c8aba012e03"
+  integrity sha512-Xbt1d68wQnUuFIEVsbt6V+RG30zwgbtCGQ4QOcXVrOH0FE4eHk64FWZ9NUfRHS4/x1PXqwz/+KOrnXD7f0WieA==
   dependencies:
     bindings "^1.5.0"
     prebuild-install "^7.1.1"
