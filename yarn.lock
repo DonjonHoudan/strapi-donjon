@@ -1855,13 +1855,13 @@
     qs "6.11.1"
     sift "16.0.1"
 
-"@strapi/plugin-cloud@4.25.8":
-  version "4.25.8"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.25.8.tgz#1ecf9adbe2514b6233a04726240e8e09ebb235aa"
-  integrity sha512-lyu+5ozlcSzIjcLKYpDXSEzo3qW36GgVRsAb8hmEbo0HdXKJWKDgVLsrLfOJMO++XnEatR8MW5m73W9999fN1g==
+"@strapi/plugin-cloud@4.25.9":
+  version "4.25.9"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.25.9.tgz#be1ad6f41b97b61ef88a42ba583125823f1c47d0"
+  integrity sha512-pBLIKbZlMrk9S0pzqhz/Zhf8+t+Rj2Sr3UDxRLKwfxm5sYBt0CC2x7rRdIupwdo6ebGcib1tDJbhxZ0SCtwQPQ==
   dependencies:
     "@strapi/design-system" "1.19.0"
-    "@strapi/helper-plugin" "4.25.8"
+    "@strapi/helper-plugin" "4.25.9"
     "@strapi/icons" "1.19.0"
     react-intl "6.4.1"
 
