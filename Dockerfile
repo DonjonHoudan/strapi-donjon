@@ -6,6 +6,7 @@ WORKDIR /opt/
 COPY package.json yarn.lock ./
 RUN npm install -g node-gyp
 RUN yarn install
+RUN yarn add pg
 ENV PATH /opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
