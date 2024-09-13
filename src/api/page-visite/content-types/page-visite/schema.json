@@ -4,17 +4,21 @@
   "info": {
     "singularName": "page-visite",
     "pluralName": "page-visites",
-    "displayName": "Page Visite"
+    "displayName": "Page Visite",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "article": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
+    "titre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "contenu": {
+      "type": "blocks"
     }
   }
 }
