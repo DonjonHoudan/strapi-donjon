@@ -868,6 +868,7 @@ export interface ApiPageActualitePageActualite extends Schema.SingleType {
     singularName: 'page-actualite';
     pluralName: 'page-actualites';
     displayName: 'Page Actualit\u00E9';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -901,16 +902,18 @@ export interface ApiPageDonjonPageDonjon extends Schema.SingleType {
     singularName: 'page-donjon';
     pluralName: 'page-donjons';
     displayName: 'Page Donjon';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    article: Attribute.Relation<
-      'api::page-donjon.page-donjon',
-      'oneToOne',
-      'api::article.article'
-    >;
+    titre: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    contenu: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -968,16 +971,18 @@ export interface ApiPageVisitePageVisite extends Schema.SingleType {
     singularName: 'page-visite';
     pluralName: 'page-visites';
     displayName: 'Page Visite';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    article: Attribute.Relation<
-      'api::page-visite.page-visite',
-      'oneToOne',
-      'api::article.article'
-    >;
+    titre: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    contenu: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
