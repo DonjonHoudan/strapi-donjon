@@ -40,6 +40,9 @@
     "slug": {
       "type": "uid",
       "targetField": "titre"
+    },
+    "lien_billetierie": {
+      "type": "string"
     }
   }
 }
