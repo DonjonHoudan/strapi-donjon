@@ -809,7 +809,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     >;
     image: Attribute.Media<'images'>;
     video: Attribute.Media<'videos'>;
-    lien: Attribute.String;
     slug: Attribute.UID<'api::article.article', 'titre'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1017,6 +1016,7 @@ export interface ApiProgrammationProgrammation extends Schema.CollectionType {
     descriptif: Attribute.Blocks & Attribute.Required;
     image_video_secondaire: Attribute.Media<'images' | 'videos'>;
     slug: Attribute.UID<'api::programmation.programmation', 'titre'>;
+    lien_billetierie: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
