@@ -41,7 +41,7 @@
       "type": "uid",
       "targetField": "titre"
     },
-    "lien_billetierie": {
+    "lien_billeterie": {
       "type": "string"
     }
   }

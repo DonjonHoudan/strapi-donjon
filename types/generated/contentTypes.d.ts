@@ -1016,7 +1016,7 @@ export interface ApiProgrammationProgrammation extends Schema.CollectionType {
     descriptif: Attribute.Blocks & Attribute.Required;
     image_video_secondaire: Attribute.Media<'images' | 'videos'>;
     slug: Attribute.UID<'api::programmation.programmation', 'titre'>;
-    lien_billetierie: Attribute.String;
+    lien_billeterie: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
