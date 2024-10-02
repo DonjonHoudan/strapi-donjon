@@ -808,7 +808,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::programmation.programmation'
     >;
     image: Attribute.Media<'images'>;
-    video: Attribute.Media<'videos'>;
     slug: Attribute.UID<'api::article.article', 'titre'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -821,6 +820,37 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: ' Contact';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required;
+    objet: Attribute.String;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
       'oneToOne',
       'admin::user'
     > &
@@ -1017,6 +1047,7 @@ export interface ApiProgrammationProgrammation extends Schema.CollectionType {
     image_video_secondaire: Attribute.Media<'images' | 'videos'>;
     slug: Attribute.UID<'api::programmation.programmation', 'titre'>;
     lien_billeterie: Attribute.String;
+    lien_youtube: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1054,6 +1085,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::contact.contact': ApiContactContact;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page-actualite.page-actualite': ApiPageActualitePageActualite;
       'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
