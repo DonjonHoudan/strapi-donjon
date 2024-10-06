@@ -925,6 +925,35 @@ export interface ApiPageActualitePageActualite extends Schema.SingleType {
   };
 }
 
+export interface ApiPageContactPageContact extends Schema.SingleType {
+  collectionName: 'page_contacts';
+  info: {
+    singularName: 'page-contact';
+    pluralName: 'page-contacts';
+    displayName: 'Page Contact';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    contenu: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-contact.page-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-contact.page-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageDonjonPageDonjon extends Schema.SingleType {
   collectionName: 'page_donjons';
   info: {
@@ -1088,6 +1117,7 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page-actualite.page-actualite': ApiPageActualitePageActualite;
+      'api::page-contact.page-contact': ApiPageContactPageContact;
       'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
       'api::page-programmation.page-programmation': ApiPageProgrammationPageProgrammation;
       'api::page-visite.page-visite': ApiPageVisitePageVisite;
