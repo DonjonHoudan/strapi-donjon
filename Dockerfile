@@ -16,3 +16,4 @@ USER node
 RUN ["npm", "run", "build"]
 EXPOSE 1337
 CMD ["yarn", "start"]
+RUN -v /folder/on/host/to/store:/public/uploads
