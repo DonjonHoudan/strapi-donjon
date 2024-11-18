@@ -11,14 +11,14 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-cloud": "5.1.0",
-    "@strapi/plugin-users-permissions": "5.1.0",
-    "@strapi/strapi": "5.1.0",
-    "better-sqlite3": "11.3.0",
-    "nodemailer": "^6.9.15",
+    "@strapi/plugin-cloud": "5.4.0",
+    "@strapi/plugin-users-permissions": "5.4.0",
+    "@strapi/strapi": "5.4.0",
+    "better-sqlite3": "11.5.0",
+    "nodemailer": "^6.9.16",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
+    "react-router-dom": "^6.28.0",
     "styled-components": "^6.0.0"
   },
   "author": {
