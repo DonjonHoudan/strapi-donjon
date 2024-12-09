@@ -2343,14 +2343,14 @@
     "@strapi/icons" "2.0.0-rc.13"
     react-intl "6.6.2"
 
-"@strapi/plugin-users-permissions@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-5.4.2.tgz#f31f167e2e7832dd487c49e21158db2891251701"
-  integrity sha512-mQimyAmZdIN/3oMNY0pubbfaFGet6HHPh4f8umMXyC4I6YKmQWGkIqbVCgaa45AEFpv8qPt5XCJLOq6xzYaTOA==
+"@strapi/plugin-users-permissions@5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-5.5.0.tgz#dce0161b636337f81adf520513b610df4538d88d"
+  integrity sha512-3HIyve//kBfVRPNGwoQcC1GXgFi2bMu9ghgQG4epWFqIv86WNQFATlPMjBAUOlxVjNxb36zwhbeCJKAbrlDwKw==
   dependencies:
-    "@strapi/design-system" "2.0.0-rc.13"
-    "@strapi/icons" "2.0.0-rc.13"
-    "@strapi/utils" "5.4.2"
+    "@strapi/design-system" "2.0.0-rc.14"
+    "@strapi/icons" "2.0.0-rc.14"
+    "@strapi/utils" "5.5.0"
     bcryptjs "2.4.3"
     formik "2.4.5"
     grant-koa "5.4.8"
@@ -2587,22 +2587,6 @@
     react-select "5.8.0"
     sharp "0.32.6"
     yup "0.32.9"
-
-"@strapi/utils@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.4.2.tgz#01d3493dee0d8e07af253ace89c9e4b214a89063"
-  integrity sha512-K36/J4B9RzwP3ExutKFaUGbi4pyvXOQ/YNgr0Hv7QMH7vxFu9Z2tLlM725Ao77FbQhFlsRh5v1KVAbXF3TYA9w==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.30.0"
-    execa "5.1.1"
-    http-errors "2.0.0"
-    lodash "4.17.21"
-    node-machine-id "1.1.12"
-    p-map "4.0.0"
-    preferred-pm "3.1.2"
-    yup "0.32.9"
-    zod "^3.22.4"
 
 "@strapi/utils@5.5.0":
   version "5.5.0"
