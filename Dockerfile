@@ -13,7 +13,7 @@ COPY package.json yarn.lock ./
 # Supprimer les node_modules s'ils existent, puis installer les dépendances
 RUN rm -rf node_modules && \
     npm install -g node-gyp && \
-    yarn install && \
+    yarn install --frozen-lockfile && \
     yarn add pg
 
 # Ajouter les binaires locaux à PATH
@@ -32,7 +32,7 @@ RUN chown -R node:node /opt/app
 USER node
 
 # Construire l'application
-RUN ["yarn", "build"]
+RUN ["node", "--max-old-space-size=2048", "/usr/local/bin/yarn", "build"]
 
 # Exposer le port
 EXPOSE 1337
