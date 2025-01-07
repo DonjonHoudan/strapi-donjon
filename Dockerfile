@@ -32,7 +32,7 @@ RUN chown -R node:node /opt/app
 USER node
 
 # Construire l'application
-RUN node --max-old-space-size=2048 $(which yarn) build
+RUN ["yarn", "build"]
 
 # Exposer le port
 EXPOSE 1337
