@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:20
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
@@ -13,7 +13,7 @@ WORKDIR /opt/app
 COPY . .
 RUN chown -R node:node /opt/app
 USER node
-RUN ["npm", "run", "build"]
+RUN ["yarn", "build"]
 EXPOSE 1337
 CMD ["yarn", "start"]
 RUN -v /folder/on/host/to/store:/public/uploads
