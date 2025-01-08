@@ -11,8 +11,7 @@ WORKDIR /opt/
 COPY package.json package-lock.json ./
 
 # Supprimer les node_modules s'ils existent, puis installer les dépendances
-RUN rm -rf node_modules && \
-    npm install -g node-gyp && \
+RUN npm install -g node-gyp && \
     npm ci
 
 # Ajouter les binaires locaux à PATH
