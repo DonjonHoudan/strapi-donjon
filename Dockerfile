@@ -8,13 +8,12 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
 
 # Copier les fichiers nécessaires pour les dépendances
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 # Supprimer les node_modules s'ils existent, puis installer les dépendances
 RUN rm -rf node_modules && \
     npm install -g node-gyp && \
-    yarn install --frozen-lockfile && \
-    yarn add pg
+    npm ci
 
 # Ajouter les binaires locaux à PATH
 ENV PATH /opt/node_modules/.bin:$PATH
@@ -32,7 +31,7 @@ RUN chown -R node:node /opt/app
 USER node
 
 # Construire l'application
-RUN ["yarn", "build"]
+RUN ["npm", "run", "build"]
 
 # Exposer le port
 EXPOSE 1337
@@ -41,4 +40,4 @@ EXPOSE 1337
 VOLUME /folder/on/host/to/store:/public/uploads
 
 # Lancer l'application
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
