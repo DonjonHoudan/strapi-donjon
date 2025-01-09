@@ -1,0 +1,41 @@
+name: Build and Deploy Strapi
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/niemad78/strapi-donjon:latest .
+
+      - name: Push Docker image
+        run: |
+          docker push ghcr.io/niemad78/strapi-donjon:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to CapRover
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} root@57.128.178.78 \
+          "docker pull ghcr.io/niemad78/strapi-donjon:latest && \
+          docker tag ghcr.io/niemad78/strapi-donjon:latest captain--strapi && \
+          docker service update --image captain--strapi captain--strapi"
