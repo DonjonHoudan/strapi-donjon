@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Deploy to CapRover
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} root@57.128.178.78 \
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@57.128.178.78 \
           "docker pull ghcr.io/niemad78/strapi-donjon:latest && \
           docker tag ghcr.io/niemad78/strapi-donjon:latest captain--strapi && \
           docker service update --image captain--strapi captain--strapi"
