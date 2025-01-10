@@ -12,6 +12,7 @@ COPY package.json package-lock.json ./
 
 # Supprimer les node_modules s'ils existent, puis installer les dépendances
 RUN npm install -g node-gyp && \
+    npm i && \
     npm ci
 
 # Ajouter les binaires locaux à PATH
