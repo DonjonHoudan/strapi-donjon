@@ -20,11 +20,6 @@
       "type": "blocks",
       "required": true
     },
-    "programmation": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::programmation.programmation"
-    },
     "image": {
       "type": "media",
       "multiple": false,
