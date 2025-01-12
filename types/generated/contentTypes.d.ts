@@ -392,10 +392,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
-    programmation: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::programmation.programmation'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titre'>;
     titre: Schema.Attribute.String & Schema.Attribute.Required;
@@ -438,6 +434,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
+    description: '';
     displayName: 'Home Page';
     pluralName: 'home-pages';
     singularName: 'home-page';
@@ -456,35 +453,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPageActualitePageActualite extends Struct.SingleTypeSchema {
-  collectionName: 'page_actualites';
-  info: {
-    description: '';
-    displayName: 'Page Actualit\u00E9';
-    pluralName: 'page-actualites';
-    singularName: 'page-actualite';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::page-actualite.page-actualite'
-    > &
-      Schema.Attribute.Private;
+    programmation: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::programmation.programmation'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -554,35 +526,6 @@ export interface ApiPageDonjonPageDonjon extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiPageProgrammationPageProgrammation
-  extends Struct.SingleTypeSchema {
-  collectionName: 'page_programmations';
-  info: {
-    displayName: 'Page Programmation';
-    pluralName: 'page-programmations';
-    singularName: 'page-programmation';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::page-programmation.page-programmation'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiPageVisitePageVisite extends Struct.SingleTypeSchema {
   collectionName: 'page_visites';
   info: {
@@ -635,7 +578,6 @@ export interface ApiProgrammationProgrammation
       Schema.Attribute.Private;
     descriptif: Schema.Attribute.Blocks & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    image_video_secondaire: Schema.Attribute.Media<'images' | 'videos'>;
     lien_billeterie: Schema.Attribute.String;
     lien_youtube: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1165,10 +1107,8 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::contact.contact': ApiContactContact;
       'api::home-page.home-page': ApiHomePageHomePage;
-      'api::page-actualite.page-actualite': ApiPageActualitePageActualite;
       'api::page-contact.page-contact': ApiPageContactPageContact;
       'api::page-donjon.page-donjon': ApiPageDonjonPageDonjon;
-      'api::page-programmation.page-programmation': ApiPageProgrammationPageProgrammation;
       'api::page-visite.page-visite': ApiPageVisitePageVisite;
       'api::programmation.programmation': ApiProgrammationProgrammation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
